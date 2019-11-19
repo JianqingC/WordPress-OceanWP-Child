@@ -3,22 +3,22 @@
  * Child theme functions
  *
  * 
- * Text Domain: OceanWp Child 
- * Example of Customizing the OceanWP child theme (with Elemontor )
+ * Text Domain: ParentTheme Child 
+ * Example of Customizing the ParentTheme child theme (with Elemontor )
  */
 
 
 function theme_enqueue_styles() {
 
-    $parent_style = 'parent-style'; // Parent Style: OceanWP
+    $parent_style = 'parent-style'; // Parent Style: ParentTheme
 
-    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' ); //OceanWP Style Sheet
+    wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' ); //ParentTheme Style Sheet
 
     wp_enqueue_style( 'child-style',
         get_stylesheet_directory_uri() . '/style.css', 
         array( $parent_style ),
         wp_get_theme()->get('Version')
-    );//The Child OceanWP Style Sheet
+    );//The Child ParentTheme Style Sheet
 
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
